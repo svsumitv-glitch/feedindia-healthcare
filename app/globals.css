@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 antialiased;
+  }
+  ::selection {
+    @apply bg-teal-500/30 text-teal-900 dark:text-teal-100;
+  }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-gray-100 dark:bg-slate-900; }
+  ::-webkit-scrollbar-thumb { @apply bg-teal-400 dark:bg-teal-600 rounded-full; }
+}
+
+@layer components {
+  .section-padding { @apply px-4 sm:px-6 lg:px-8 py-16 md:py-24; }
+  .container-custom { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+  .glass-card { @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl; }
+  .gradient-text { @apply bg-gradient-to-r from-teal-600 to-cyan-500 bg-clip-text text-transparent; }
+  .btn-primary { @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-teal-600 to-cyan-500 text-white font-semibold shadow-lg shadow-teal-500/25 hover:shadow-teal-500/40 hover:-translate-y-0.5 transition-all duration-200; }
+  .card { @apply bg-white dark:bg-slate-800 rounded-2xl border border-gray-100 dark:border-slate-700 shadow-sm; }
+  .section-badge { @apply inline-block px-4 py-1.5 rounded-full text-sm font-semibold bg-teal-100 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 mb-4; }
+  .section-title { @apply text-3xl lg:text-4xl font-extrabold text-slate-800 dark:text-white mb-4 leading-tight; }
+  .section-subtitle { @apply text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed; }
+}
+
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
